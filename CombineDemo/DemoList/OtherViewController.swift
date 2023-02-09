@@ -9,11 +9,39 @@ import UIKit
 
 class OtherViewController: UIViewController {
 
+    var model:Number!
+    var btn:UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        mergeFunc()
-        zipFun()
+        
+//        mergeFunc()
+//        zipFun()
+        
+        let btn = UIButton.init(type: .custom)
+        btn.setTitle("\(model.value)", for: .normal)
+        btn.backgroundColor = .systemBlue
+        btn.frame = .init(origin: .zero, size: .init(width: 200, height: 30))
+        btn.center = self.view.center
+        btn.publisher(for: .touchUpInside)
+            .throttle(for: 1, scheduler: RunLoop.main, latest: true)
+            .sink { button in
+                self.model.value += 1
+                btn.setTitle("\(self.model.value)", for: .normal)
+                print("richard OtherViewController value = \(self.model.value)")
+            }.store(in: &cancellableBag)
+        view.addSubview(btn)
+        
+        
+        let textView = UITextView.init()
+//        textView.publisher(for: .touchUpInside)
+        textView.publisher(for: \.text)
+            .sink { string in
+                btn.setTitle(string, for: .normal)
+            }
+            .store(in: &cancellableBag)
+        
+        let textField = UITextField.init()
+        textField.publisher(for: .touchUpInside)
     }
     
 

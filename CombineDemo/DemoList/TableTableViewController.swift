@@ -24,7 +24,7 @@ class TableTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    let current = CurrentValueSubject<Number,Never>(Number(value: Int(arc4random())))
+    let current = CurrentValueSubject<Number,Never>(Number(value: Int(arc4random_uniform(10))))
     var activity:UIActivityIndicatorView!
     
     
@@ -73,7 +73,7 @@ class TableTableViewController: UITableViewController {
     @objc func rightBtnAction() {
         activity.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-            let model = Number(value: Int(arc4random()))
+            let model = Number(value: Int(arc4random_uniform(10)))
             self.current.send(model)
             self.activity.stopAnimating()
         }
@@ -116,9 +116,8 @@ class TableTableViewController: UITableViewController {
         vc.model = number
         number.$value
             .receive(on: DispatchQueue.main)
-            .first()
             .sink { value in
-                print("value = \(value)")
+                print("richard TableTableViewController value = \(value)")
                 tableView.reloadData()
             }
             .store(in: &cancellableBag)

@@ -13,6 +13,7 @@
 		4407925B293F90C600252545 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4407925A293F90C600252545 /* Assets.xcassets */; };
 		4407925E293F90C600252545 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4407925C293F90C600252545 /* LaunchScreen.storyboard */; };
 		440792692942190F00252545 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440792682942190F00252545 /* LoginViewController.swift */; };
+		44743C9C29953E3B00556F06 /* UIControlPublish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44743C9B29953E3B00556F06 /* UIControlPublish.swift */; };
 		448279882976BFC100EBEF35 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448279872976BFC100EBEF35 /* TimerViewController.swift */; };
 		4482798A297D6CBD00EBEF35 /* TableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44827989297D6CBD00EBEF35 /* TableTableViewController.swift */; };
 		4482798C297F7C3700EBEF35 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482798B297F7C3700EBEF35 /* NextViewController.swift */; };
@@ -30,6 +31,7 @@
 		4407925D293F90C600252545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4407925F293F90C600252545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		440792682942190F00252545 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		44743C9B29953E3B00556F06 /* UIControlPublish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlPublish.swift; sourceTree = "<group>"; };
 		448279872976BFC100EBEF35 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		44827989297D6CBD00EBEF35 /* TableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTableViewController.swift; sourceTree = "<group>"; };
 		4482798B297F7C3700EBEF35 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				4407925A293F90C600252545 /* Assets.xcassets */,
 				4407925C293F90C600252545 /* LaunchScreen.storyboard */,
 				4407925F293F90C600252545 /* Info.plist */,
+				44743C9B29953E3B00556F06 /* UIControlPublish.swift */,
 			);
 			path = CombineDemo;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				440792692942190F00252545 /* LoginViewController.swift in Sources */,
 				44079256293F90C400252545 /* ViewController.swift in Sources */,
 				44079252293F90C400252545 /* AppDelegate.swift in Sources */,
+				44743C9C29953E3B00556F06 /* UIControlPublish.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
