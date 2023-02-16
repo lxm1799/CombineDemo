@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Combine
 class OtherViewController: UIViewController {
 
     var model:Number!
@@ -22,6 +22,7 @@ class OtherViewController: UIViewController {
         btn.backgroundColor = .systemBlue
         btn.frame = .init(origin: .zero, size: .init(width: 200, height: 30))
         btn.center = self.view.center
+//        btn.addTarget(self, action: #selector(aaaaaa), for: .touchUpInside)
         btn.publisher(for: .touchUpInside)
             .throttle(for: 1, scheduler: RunLoop.main, latest: true)
             .sink { button in
@@ -32,16 +33,36 @@ class OtherViewController: UIViewController {
         view.addSubview(btn)
         
         
-        let textView = UITextView.init()
-//        textView.publisher(for: .touchUpInside)
-        textView.publisher(for: \.text)
-            .sink { string in
-                btn.setTitle(string, for: .normal)
-            }
+//        let textView = UITextView.init()
+////        textView.publisher(for: .touchUpInside)
+//        textView.publisher(for: \.text)
+//            .sink { string in
+//                btn.setTitle(string, for: .normal)
+//            }
+//            .store(in: &cancellableBag)
+//
+//        let textField = UITextField.init()
+//        textField.publisher(for: .touchUpInside)
+        
+    
+        let lab = UILabel.init()
+        lab.backgroundColor = .red
+        view.addSubview(lab)
+        lab.text = "点击我呀"
+        lab.textAlignment = .center
+        lab.textColor = .white
+        lab.isUserInteractionEnabled = true
+        lab.snp.makeConstraints { make in
+            make.center.equalTo(self.view)
+            make.size.equalTo(CGSize.init(width: 100, height: 100))
+        }
+        lab.gesturePublisher(.tap)
+            .throttle(for: 1, scheduler: RunLoop.main, latest: false)
+            .sink(receiveValue: { tap in
+                print("tap = \(tap)")
+            })
             .store(in: &cancellableBag)
         
-        let textField = UITextField.init()
-        textField.publisher(for: .touchUpInside)
     }
     
 
