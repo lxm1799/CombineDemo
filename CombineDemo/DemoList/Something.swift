@@ -9,5 +9,5 @@ import Foundation
 
 struct Something{
     
-    ///this is a test of git
+
 }
