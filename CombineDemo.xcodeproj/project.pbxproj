@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		44010F81299D0C1A004D6D0F /* UIGesturePublish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44010F80299D0C1A004D6D0F /* UIGesturePublish.swift */; };
 		44010F8329A501C4004D6D0F /* CombineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44010F8229A501C4004D6D0F /* CombineTableViewController.swift */; };
-		44010F8529AAFDF8004D6D0F /* Something.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44010F8429AAFDF8004D6D0F /* Something.swift */; };
 		44079252293F90C400252545 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44079251293F90C400252545 /* AppDelegate.swift */; };
 		44079256293F90C400252545 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44079255293F90C400252545 /* ViewController.swift */; };
 		44079259293F90C400252545 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44079257293F90C400252545 /* Main.storyboard */; };
@@ -28,7 +27,6 @@
 		1985EF58FDD084BA638E4F4D /* Pods-CombineDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CombineDemo.debug.xcconfig"; path = "Target Support Files/Pods-CombineDemo/Pods-CombineDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		44010F80299D0C1A004D6D0F /* UIGesturePublish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGesturePublish.swift; sourceTree = "<group>"; };
 		44010F8229A501C4004D6D0F /* CombineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTableViewController.swift; sourceTree = "<group>"; };
-		44010F8429AAFDF8004D6D0F /* Something.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Something.swift; sourceTree = "<group>"; };
 		4407924E293F90C400252545 /* CombineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44079251293F90C400252545 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44079255293F90C400252545 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				4482798B297F7C3700EBEF35 /* NextViewController.swift */,
 				4482798D2980CE0C00EBEF35 /* OtherViewController.swift */,
 				44010F8229A501C4004D6D0F /* CombineTableViewController.swift */,
-				44010F8429AAFDF8004D6D0F /* Something.swift */,
 			);
 			path = DemoList;
 			sourceTree = "<group>";
@@ -246,7 +243,6 @@
 				440792692942190F00252545 /* LoginViewController.swift in Sources */,
 				44079256293F90C400252545 /* ViewController.swift in Sources */,
 				44079252293F90C400252545 /* AppDelegate.swift in Sources */,
-				44010F8529AAFDF8004D6D0F /* Something.swift in Sources */,
 				44010F81299D0C1A004D6D0F /* UIGesturePublish.swift in Sources */,
 				44743C9C29953E3B00556F06 /* UIControlPublish.swift in Sources */,
 			);
