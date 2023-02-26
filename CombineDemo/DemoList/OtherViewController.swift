@@ -16,7 +16,72 @@ class OtherViewController: UIViewController {
         
 //        mergeFunc()
 //        zipFun()
+//        someUI()
+//        aboutPublisherAndSubscribers()
+//        futureTest()
+        conditionTest()
+    }
+    
+    enum NetWorkError:Error {
+        case error(code:Int,msg:String,data:Any?)
+    }
+    
+    ///异步使用
+    func futureTest() {
+        Future<Int,NetWorkError>.init { promiss in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                promiss(.failure(NetWorkError.error(code: -1, msg: "网络异常", data: nil)))
+            }
+        }.sink(receiveCompletion: { error in
+            print("error = \(error)")
+        }, receiveValue: { value in
+            print("value = \(value)")
+        }).store(in: &cancellableBag)
+    }
+    
+    ///判断类型
+    func conditionTest() {
+        let arr = [1,2,3,4,5]
+        arr.publisher
+            .allSatisfy{$0 > 0}
+            .sink { flag in
+                print("value = \(flag)")
+            }
+            .store(in: &cancellableBag)
         
+        arr.publisher
+            .contains(0)
+            .sink { flag in
+                print("value = \(flag)")
+            }
+            .store(in: &cancellableBag)
+    }
+    
+    
+    func aboutPublisherAndSubscribers() {
+        ///发布者
+        let arr = [1,2,3,4,5]
+        let arrPublisher = arr.publisher
+            .map{$0 + 1}
+            .filter{$0 % 2 == 0}
+            .print()
+        
+        ///订阅者
+        let subscription = Subscribers.Sink<Int,Never> { complatetion in
+            if complatetion == .finished{
+                print("subscription finished")
+            }else{
+                print("subscription error")
+            }
+        } receiveValue: { value in
+            print("subscription value = \(value)")
+        }
+        
+        ///发布者与订阅者建立联系
+        arrPublisher.receive(subscriber: subscription)
+    }
+    
+    func someUI() {
         let btn = UIButton.init(type: .custom)
         btn.setTitle("\(model.value)", for: .normal)
         btn.backgroundColor = .systemBlue
@@ -32,19 +97,7 @@ class OtherViewController: UIViewController {
             }.store(in: &cancellableBag)
         view.addSubview(btn)
         
-        
-//        let textView = UITextView.init()
-////        textView.publisher(for: .touchUpInside)
-//        textView.publisher(for: \.text)
-//            .sink { string in
-//                btn.setTitle(string, for: .normal)
-//            }
-//            .store(in: &cancellableBag)
-//
-//        let textField = UITextField.init()
-//        textField.publisher(for: .touchUpInside)
-        
-    
+
         let lab = UILabel.init()
         lab.backgroundColor = .red
         view.addSubview(lab)
@@ -62,9 +115,7 @@ class OtherViewController: UIViewController {
                 print("tap = \(tap)")
             })
             .store(in: &cancellableBag)
-        
     }
-    
 
     func mergeFunc() {
         let a = [1,2,3]
